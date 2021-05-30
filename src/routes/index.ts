@@ -4,7 +4,7 @@ import { to, response } from "../helpers/index.ts";
 
 const router = new Router();
 
-router.get("/:controller?", async ({ response: res, request: req, params }: RouterContext) => {
+router.post("/:controller?", async ({ response: res, request: req, params }: RouterContext) => {
     if (!params.controller || !req.headers.get("solr_action")) {
         res.body = response("A valid [controller] or [action] is required.");
     } else {
