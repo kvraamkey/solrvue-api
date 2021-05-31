@@ -8,6 +8,10 @@ const arg_port = parse(args).port;
 
 app.use(oakCors());
 
+app.use((ctx) => {
+    ctx.response.body = "Hello World!";
+});
+
 app.use(Router.prefix("/solr").routes());
 app.use(Router.allowedMethods());
 
